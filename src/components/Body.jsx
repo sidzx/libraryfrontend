@@ -15,10 +15,10 @@ function Body() {
             <div style={{ height: "100vh", width: "100vw", backgroundSize: "cover", backgroundColor: "success", backgroundImage: `url(${img})`, backgroundRepeat: "no-repeat", opacity: "" }}>
 
                 <h1 className='text-center mb-4 pt-4' style={{ fontFamily: "Fantasy", color: "white", textShadow: "2px" }}> UNIVERSITY LIBRARY MANAGEMENT SYSTEM</h1>
-                <div className='d-flex justify-content-evenly'>
-                    <div className='mx-0' style={{ color: "white", backgroundColor: "white", opacity: "70%", height: "50vh", width: "40vw",borderRadius:"10px" }}>
-                        <div style={{ color: "black" }}>
-                            <div className='d-flex flex-column justify-content-center align-items-center ' style={{ height: "40vh" }}>
+                <div className=' row d-flex justify-content-evenly'>
+                    <div className='  mx-0' style={{ color: "white", backgroundColor: "white", opacity: "70%", height: "30vh", width: "50vw",borderRadius:"10px" }}>
+                        <div className='col-12' style={{ color: "black" }}>
+                            <div className='d-flex flex-column justify-content-center align-items-center ' style={{ height: "30vh" }}>
                                 <h3 className='text-center mb-4 pt-4' style={{ fontFamily: "Fantasy", color: "black", textShadow: "2px" }}> WELCOME TO UNIVERSITY LIBRARY</h3>
 
 
@@ -27,8 +27,8 @@ function Body() {
 
                         </div>
                     </div>
-                    <div style={{ color: "white" }} className='d-flex justify-content-evenly'>
-                        <div style={{ color: "white", backgroundColor: "white", opacity: "70%", height: "50vh", width: "20vw",borderRadius:"10px" }} className='d-flex flex-column justify-content-evenly'>
+                    <div style={{ color: "white" ,width:"80vw"}} className=' mt-2 row d-flex justify-content-evenly'>
+                        <div style={{ color: "white", backgroundColor: "white", opacity: "70%", height: "30vh", width: "20vw",borderRadius:"10px" }} className=' col d-flex flex-column justify-content-evenly'>
                             <h3 className='text-center mb-4 pt-4' style={{ fontFamily: "Fantasy", color: "black", textShadow: "2px" }}> Already a user?</h3>
                             <div className='d-flex justify-content-center'>
                                 <img src={login} style={{ width: "90px", height: "90px" }} />
@@ -39,7 +39,7 @@ function Body() {
                             </div>
 
                         </div>
-                        <div className='mx-2 d-flex flex-column justify-content-evenly' style={{borderRadius:"10px", color: "white", backgroundColor: "white", opacity: "70%", height: "50vh", width: "20vw" }}>
+                        <div className=' col mx-2 d-flex flex-column justify-content-evenly' style={{borderRadius:"10px", color: "white", backgroundColor: "white", opacity: "70%", height: "30vh", width: "20vw" }}>
                             <h3 className='text-center mb-4 pt-4' style={{ fontFamily: "Fantasy", color: "black", textShadow: "2px" }}> New user?</h3>
                             <div className='d-flex justify-content-center'>
                                 <img src={register} style={{ width: "80px", height: "80px" }} />

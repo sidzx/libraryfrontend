@@ -119,6 +119,8 @@ function Student() {
     if (result.status == 200) {
       toast.success("returned succesully")
       bookHistory(result.data.studentid)
+     
+     
 
     }
     else {
@@ -207,7 +209,9 @@ function Student() {
                     <td>{item.bookingDate}</td>
                     <td>{item.returnDate}</td>
                     {
-                      item.status==="Approved" ?<td>Returned</td>:
+                      item.status==="pending" || item.status==="Approved" ?
+                      <td>returned</td>
+                      :
                     <td><Button variant='primary' onClick={() => { returnBook(item) }}>Return </Button></td>
                     }
                   </tr>
@@ -221,9 +225,9 @@ function Student() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          {/* <Button variant="primary" onClick={handleClose}>
             Save Changes
-          </Button>
+          </Button> */}
         </Modal.Footer>
       </Modal>
 
