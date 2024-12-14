@@ -50,7 +50,7 @@ function AddBooks() {
             }
         }
         else if (name == "title") {
-            if (!!value.match(/^[a-zA-Z0-9 ]{1,}$/)) {
+            if (!!value.match(/^[a-zA-Z0-9.,/-:; ]{1,}$/)) {
                 setValidatetitle(true)
                 setBook({ ...book, title: e.target.value })
             }
@@ -81,7 +81,7 @@ function AddBooks() {
             }
         }
         else if (name == "description") {
-            if (!!value.match(/^[a-zA-Z0-9 .,"]{1,}$/)) {
+            if (!!value.match(/^[a-zA-Z0-9 .,/-:;]{1,}$/)) {
                 setValidatedescription(true)
                 setBook({ ...book, description: e.target.value })
 

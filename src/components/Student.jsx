@@ -321,7 +321,7 @@ function Student() {
                   className="hover-shadow mx-2 my-2 ">
                   <Card.Img style={{
                     height: '200px',
-                    objectFit: 'cover',
+                    objectFit: 'contain',
                   }} variant="top" src={`${base_url}/upload/${item.cover}`} alt=" book,s cover" />
                   <Card.Body>
                     <Card.Title style={{

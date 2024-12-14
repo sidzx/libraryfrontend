@@ -14,10 +14,10 @@ import { toast } from 'react-toastify'
 
 
 function Viewbooks() {
-    const [view,setView]=useState([])
-    const [items,setItems]=useState({})
+    const [view,setView]=useState([])//contains list of books
+    const [items,setItems]=useState({})//book to edit
     const [token,setToken]=useState()
-    const [update,setUpdate]=useState({})
+    const [update,setUpdate]=useState({})//first assigning book to edit.then changing it on onchange
     const [preview,setPreview]=useState("")
 
     const viewbook=async()=>{
@@ -25,7 +25,7 @@ function Viewbooks() {
         console.log(result)
         setView(result.data)
     }
-
+    // delete function
     const del=async(id)=>{
         const Header={
             'Content-type':'multipart/form-data','Authorization': `Bearer ${token}`
@@ -40,7 +40,7 @@ function Viewbooks() {
             toast.error("deletion  failed")
         }
     }
-
+//edit function 
     const edit=async(update)=>{
         console.log(update)
         const edited =new FormData()
@@ -51,6 +51,8 @@ function Viewbooks() {
         edited.append("description",update.description)
         edited.append("cover",update.cover)
         edited.append("number",update.number)
+        edited.append("userId",update._id)
+       
         console.log(edited)
         if(update.cover!=items.cover){
             const Header={
@@ -63,7 +65,12 @@ function Viewbooks() {
             console.log("with file")
             if(result.status==200){
                 toast.success("edited succesfully")
+               
                 viewbook()
+                handleClose()
+                setPreview("")
+                // console.log(preview)
+             
             }
             else{
                 toast.error("editing failed")
@@ -83,6 +90,11 @@ function Viewbooks() {
             if(result.status==200){
                 toast.success("edited succesfully")
                 viewbook()
+                setPreview("")
+            
+               
+                // setPreview(items.cover)
+                // console.log(preview)
             }
             else{
                 toast.error("editing failed")
@@ -92,6 +104,7 @@ function Viewbooks() {
 
        
     }
+
     
     const [show,setShow]=useState(false);
     const handleClose=()=>setShow(false);
@@ -99,7 +112,8 @@ function Viewbooks() {
     const handleShow=(item)=>{
         setShow(true)
         console.log(item)
-        setItems(item)
+        setItems(item) // setting clicked book
+        console.log(item.cover)
         setUpdate(item)
     }
     
@@ -113,6 +127,8 @@ function Viewbooks() {
         }
         
     },[])
+
+
     useEffect(()=>{
         if(update.cover!=items.cover){
             setPreview(URL.createObjectURL(update.cover))

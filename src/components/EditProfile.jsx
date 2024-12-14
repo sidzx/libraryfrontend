@@ -252,7 +252,7 @@ function EditProfile() {
 
                                     <FormLabel style={{ color: "black", fontStyle: "italic" }}>Profile:
                                         <br />
-                                        <input onChange={(e) => { setEditedadmin({ ...editedadmin, profile: e.target.files[0] }) }} className="form-control" type='file' name="profile" id="profile" placeholder='upload your image' />
+                                        <input style={{display:"none"}} onChange={(e) => { setEditedadmin({ ...editedadmin, profile: e.target.files[0] }) }} className="form-control" type='file' name="profile" id="profile" placeholder='upload your image' />
                                         <img height={'200px'} width={'320px'} src={preview ? preview : `${base_url}/upload/${admin.profile}`} alt="" className='img-fluid'/>
                                     </FormLabel>
 

@@ -220,10 +220,10 @@ function Registration() {
                                 }
                                 <FormLabel style={{ color: "white", fontStyle: "italic" }}>Gender:</FormLabel>
                                 <br />
-                                <FormLabel className='mx-2' style={{ color: "white", fontStyle: "italic" }}>Male:</FormLabel>
-                                <input onChange={(e) => { reg(e) }} type="radio" name="gender" id="male" value="male" className='form-check-input mx-2 mb-lg-4' />
-                                <FormLabel className='mx-2' style={{ color: "white", fontStyle: "italic" }}>Female:</FormLabel>
-                                <input onChange={(e) => { reg(e) }} type="radio" name="gender" id="female" value="female" className='form-check-input mx-2 mb-lg-4' />
+                                <FormLabel  style={{ color: "white", fontStyle: "italic" }}>Male:</FormLabel>
+                                <input onChange={(e) => { reg(e) }} type="radio" name="gender" id="male" value="male" className='form-check-input mb-lg-4' />
+                                <FormLabel  style={{ color: "white", fontStyle: "italic" }}>Female:</FormLabel>
+                                <input onChange={(e) => { reg(e) }} type="radio" name="gender" id="female" value="female" className='form-check-input mb-lg-4' />
 
 
 
